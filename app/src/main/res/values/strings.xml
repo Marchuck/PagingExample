@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PagingExample</string>
+    <string name="gender">gender</string>
+</resources>
