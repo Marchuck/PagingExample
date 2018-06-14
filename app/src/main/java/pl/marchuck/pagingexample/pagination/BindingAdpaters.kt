@@ -12,7 +12,6 @@ fun setupRecyclerViewAdapter(view: RecyclerView, viewModel: PaginationViewModel)
 
     view.layoutManager = LinearLayoutManager(view.context)
     view.adapter = viewModel.adapter
-
 }
 
 @BindingAdapter("android:genderImage")

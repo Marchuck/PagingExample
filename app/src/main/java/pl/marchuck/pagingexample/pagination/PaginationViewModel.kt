@@ -1,21 +1,19 @@
 package pl.marchuck.pagingexample.pagination
 
-import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.Observer
-import pl.marchuck.pagingexample.App
+import android.arch.lifecycle.ViewModel
 import pl.marchuck.pagingexample.data.PagedListProvider
 import pl.marchuck.pagingexample.data.model.Person
 import pl.marchuck.pagingexample.pagination.adapter.SwapiAdapter
 
-class PaginationViewModel(pagedListProvider: PagedListProvider<Person?>) : AndroidViewModel(App.get()) {
+class PaginationViewModel(pagedListProvider: PagedListProvider<Person?>) : ViewModel() {
 
-    private val pagedListData = pagedListProvider.provide()
+    val pagedListData = pagedListProvider.provide()
 
     val adapter = SwapiAdapter()
 
     fun observePagedList(owner: LifecycleOwner) {
-        pagedListData.observe(owner, Observer { adapter.submitList(it) })
+        pagedListData.observe(owner, Observer{ adapter.submitList(it)})
     }
-
 }

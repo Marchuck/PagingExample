@@ -17,20 +17,16 @@ class SwapiPeopleDataSource(val useCase: GetPeopleUseCase = GetPeopleUseCase.cre
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Person?>) {
         async {
             val items = useCase.execute(page = params.key).await()
-            callback.onResult(items.orEmpty(), calculateNext(params.key))
+            callback.onResult(items.orEmpty(), (params.key).inc())
         }
     }
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Person?>) {
         async {
             val items = useCase.execute(page = params.key).await()
-            callback.onResult(items.orEmpty(), calculatePrevious(params.key))
+            callback.onResult(items.orEmpty(), params.key.dec())
         }
     }
-
-    private fun calculatePrevious(key: Int?) = key?.dec() ?: 1
-
-    private fun calculateNext(key: Int?) = key?.inc() ?: 1
 
     companion object {
 

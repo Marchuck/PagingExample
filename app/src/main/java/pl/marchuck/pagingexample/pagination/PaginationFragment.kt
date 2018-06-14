@@ -26,7 +26,6 @@ class PaginationFragment : Fragment() {
         val binding = DataBindingUtil.inflate<PaginationFragmentBinding>(inflater,
                 R.layout.pagination_fragment, container, false)
 
-        //normally you would use DI framework to inject viewModel
         viewModel = provideViewModel()
 
         binding.viewModel = viewModel
