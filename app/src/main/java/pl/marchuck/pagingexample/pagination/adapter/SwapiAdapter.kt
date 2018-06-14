@@ -6,12 +6,12 @@ import android.support.v7.util.DiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import pl.marchuck.pagingexample.R
-import pl.marchuck.pagingexample.data.model.ResultsItem
+import pl.marchuck.pagingexample.data.model.Person
 import pl.marchuck.pagingexample.databinding.ItemSwapiPersonBinding
 import pl.marchuck.pagingexample.pagination.PaginationItemCallback
 
-class SwapiAdapter(diffCallback: DiffUtil.ItemCallback<ResultsItem?> = PaginationItemCallback)
-    : PagedListAdapter<ResultsItem, SwapiPersonViewHolder>(diffCallback) {
+class SwapiAdapter(diffCallback: DiffUtil.ItemCallback<Person?> = PaginationItemCallback)
+    : PagedListAdapter<Person, SwapiPersonViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SwapiPersonViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,7 +23,6 @@ class SwapiAdapter(diffCallback: DiffUtil.ItemCallback<ResultsItem?> = Paginatio
 
     override fun onBindViewHolder(holder: SwapiPersonViewHolder, position: Int) {
         val item = getItem(position)
-
         holder.bind(item)
     }
 }

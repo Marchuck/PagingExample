@@ -14,5 +14,5 @@ data class PeopleResponse(
         val count: Int = 0,
 
         @field:SerializedName("results")
-        val results: List<ResultsItem?>? = null
+        val results: List<Person?>? = null
 )

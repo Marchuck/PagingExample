@@ -5,10 +5,10 @@ import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.Observer
 import pl.marchuck.pagingexample.App
 import pl.marchuck.pagingexample.data.PagedListProvider
-import pl.marchuck.pagingexample.data.model.ResultsItem
+import pl.marchuck.pagingexample.data.model.Person
 import pl.marchuck.pagingexample.pagination.adapter.SwapiAdapter
 
-class PaginationViewModel(pagedListProvider: PagedListProvider<ResultsItem?>) : AndroidViewModel(App.get()) {
+class PaginationViewModel(pagedListProvider: PagedListProvider<Person?>) : AndroidViewModel(App.get()) {
 
     private val pagedListData = pagedListProvider.provide()
 

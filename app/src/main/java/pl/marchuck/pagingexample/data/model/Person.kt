@@ -2,7 +2,7 @@ package pl.marchuck.pagingexample.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResultsItem(
+data class Person(
 
         @field:SerializedName("films")
         val films: List<String?>? = null,

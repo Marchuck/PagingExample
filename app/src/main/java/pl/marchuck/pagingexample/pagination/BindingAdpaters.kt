@@ -18,8 +18,5 @@ fun setupRecyclerViewAdapter(view: RecyclerView, viewModel: PaginationViewModel)
 @BindingAdapter("android:genderImage")
 fun setupGenderImage(view: ImageView, gender: String) {
 
-    view.setImageResource(
-            PersonMapper.getGenderDrawable(gender)
-    )
-
+    view.setImageResource(PersonMapper.getGenderDrawable(gender))
 }
